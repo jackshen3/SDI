@@ -1,0 +1,11 @@
+print("Welcome to the Temperature Conversion App.")
+given_temp = float(input("What is the given temperature in degrees Fahrenheit: "))
+
+fahrenheit = round(given_temp, 4)
+celsius =  round(((given_temp - 32)*5/9), 4)
+kelvin = round((((given_temp - 32)*5/9)+ 273.15), 4)
+
+
+print("Degrees Fahrenheit:", fahrenheit)
+print("Degrees Celsius:", celsius)
+print("Degrees Kelvin:", kelvin)
