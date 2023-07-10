@@ -1,0 +1,28 @@
+def basketball_program():
+  roster = []
+  point_guard = input("Who is your point guard: ").title()
+  shooting_guard = input("Who is your shotting guard: ").title()
+  small_forward = input("Who is your small forward: ").title()
+  power_forward = input("Who is your power forward: ").title()
+  center = input("Who is your center: ").title()
+
+  
+  for i in (point_guard, shooting_guard, small_forward, power_forward, center):
+      roster.append(i)
+
+  
+  print(" \n Your starting 5 for the upcoming basketball season \n \t Point Guard: \t \t" + point_guard + "\n \t Shooting Guard: \t" + shooting_guard + "\n \t Small Forward: \t" + small_forward + "\n \t Power Forward: \t" + power_forward + "\n \t Center: \t \t \t" + center + "\n")
+
+  
+  injured_player = []
+  injured_player.insert(2, roster.pop(roster.index(small_forward)))
+  small_forward = input("Oh no, " + injured_player[0] + " is injured.\nWho will take " + injured_player[0] + "'s " + "spot: ").title()
+
+  
+  print(" \n Your starting 5 for the upcoming basketball season \n \t Point Guard: \t \t" + point_guard + "\n \t Shooting Guard: \t" + shooting_guard + "\n \t Small Forward: \t" + small_forward + "\n \t Power Forward: \t" + power_forward + "\n \t Center: \t \t \t" + center + "\n")
+
+  
+  print("Good luck", small_forward, "you will do great!")
+  print("Your roster now has", len(roster), "players.")
+
+basketball_program()
