@@ -53,7 +53,6 @@ print("")
 total = sum(grade_list)
 new_average = total/len(grade_list)
 
-
 print( name + "'s New Grade Summary:")
 print(" \t Total Number of Grades: " + str(number_grades))
 print(" \t Highest Grade: " + str(max_number))
@@ -63,6 +62,7 @@ print("")
 
 print("Your new average would be a " + str(round(new_average, 2))+ " compared to your real average of " + str(round(average, 2)) + "!")
 print("That is a change of " + str((round(new_average - average, 2))) + " points!")
+print("")
 
 print("Too bad your original grades are still the same!")
 print(grade_list)
