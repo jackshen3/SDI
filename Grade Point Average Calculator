@@ -1,0 +1,69 @@
+print("Welcome to the Grade Point Average Calculator App")
+name = (input("What is your name: ")).title()
+number_grades = int(input("How many grades would you like to enter: "))
+
+grade_list = []
+
+for i in range(number_grades):
+  grades = input("Enter grade: ")
+  grade_list.append(float(int(grades)))
+print("")
+
+print("Grades Highest to Lowest:")
+grade_list.sort(reverse=True)
+for i in grade_list:
+  print(i)
+print("")
+
+total = sum(grade_list)
+average = total/len(grade_list)
+
+max_number = max(grade_list)
+min_number = min(grade_list)
+
+print( name + "'s Grade Summary:")
+print(" \t Total Number of Grades: " + str(number_grades))
+print(" \t Highest Grade: " + str(max_number))
+print(" \t Lowest Grade: " + str(min_number))
+print(" \t Average: {0:.2f}".format(average))
+print("")
+
+desired_average = int(input("What is your desired average: "))
+print("")
+
+new_average = ((len(grade_list) + 1)*desired_average) - sum(grade_list)
+print("Good luck " + name)
+print("You will need to get a " + str(new_average) + " on your next assignment to earn a " + str(desired_average) + " average.")
+print("")
+
+print("Let's see what your average could have been if you did better/worse on an assignment.")
+print(grade_list)
+edit_grade = input("What grade would you like to change: ")
+grade_list.remove(float(edit_grade))
+save_grade = input("What grade would you like to change " + edit_grade + " to: ")
+grade_list.append(float(save_grade))
+
+
+print("New Grades Highest to Lowest:")
+grade_list.sort(reverse=True)
+for i in grade_list:
+  print(i)
+print("")
+
+total = sum(grade_list)
+new_average = total/len(grade_list)
+
+
+print( name + "'s New Grade Summary:")
+print(" \t Total Number of Grades: " + str(number_grades))
+print(" \t Highest Grade: " + str(max_number))
+print(" \t Lowest Grade: " + str(min_number))
+print(" \t Average: {0:.2f}".format(new_average))
+print("")
+
+print("Your new average would be a " + str(round(new_average, 2))+ " compared to your real average of " + str(round(average, 2)) + "!")
+print("That is a change of " + str((round(new_average - average, 2))) + " points!")
+
+print("Too bad your original grades are still the same!")
+print(grade_list)
+print("You should go ask for extra credit!")
